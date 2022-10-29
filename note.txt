@@ -1,0 +1,13 @@
+
+Steps to make the app : this the most complicated part
+Step 1 mkdir then npx create-react-app frontend
+Step 2 ls -a into front end folder then rm -rf .git
+Step 3 move .gitignore into root from frontend folder
+Step 4 git init in the root folder
+Step 5 in .git ignore : add node_modules/ , .env
+Step 6 inside root create package Json . Npm init -y
+Step 7 install in root package json npm I concurrently express dotenv serve-favicon
+Step 8 put in scripts above to implement concurrently then npm run dev
+Step 9 put in proxy on front end package (“proxy”: “http://localhost:5000 (or whatever server you’re on)
+Step 10 Created backend folder wit server.js in it. 
+Step 11rm  in server.js require express. Morgan, dotenv etc.
