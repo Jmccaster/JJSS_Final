@@ -84,15 +84,64 @@ code {
 }
 
 .form-container {
-  padding: 3vmin;
-  background-color: white;
-  border: 0.1vmin solid var(--tan-3);
-  border-radius: 1vmin;
+  padding-top:1%;
+  background-color: #fefefe;
+  margin: 5% auto 15% auto; 
+  border: 1px solid #888;
+  width: 50%;
+  padding-left:20px;
+  padding-right:15px;
+  padding-bottom:2%;
+}
+input {
+  width: 80%;
+  padding: 10px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+}
+
+input:focus {
+  background-color: #ddd;
+  outline: none;
+}
+.button{ background-color: #232125;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  margin:auto
+}
+button{
+  background-color: #232125;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  margin:auto
+  
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+button:disabled,
+form:invalid button[type="submit"] {
+  cursor: not-allowed;
+  background-color: #232125;
+  
 }
 
 p.error-message {
-  color: var(--orange);
+  color: red;
   text-align: center;
+  font-style:normal;
 }
 
 form {
@@ -102,59 +151,23 @@ form {
   color: var(--text-light);
 }
 
+.authForm{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
 label {
   font-size: 2vmin;
   display: flex;
   align-items: center;
 }
 
-input {
-  padding: 1vmin;
-  font-size: 2vmin;
-  border: 0.1vmin solid var(--tan-3);
-  border-radius: 0.5vmin;
-  color: var(--text-dark);
-  background-image: none !important; /* prevent lastpass */
-  outline: none;
+
+.inputlabel{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
 }
 
-input:focus {
-  border-color: var(--orange);
-}
-
-button,
-a.button {
-  margin: 1vmin;
-  padding: 1vmin;
-  color: var(--white);
-  background-color: var(--orange);
-  font-size: 2vmin;
-  font-weight: bold;
-  text-decoration: none;
-  text-align: center;
-  border: 0.1vmin solid var(--tan-2);
-  border-radius: 0.5vmin;
-  outline: none;
-  cursor: pointer;
-}
-
-button.btn-sm {
-  font-size: 1.5vmin;
-  padding: 0.6vmin 0.8vmin;
-}
-
-button.btn-xs {
-  font-size: 1vmin;
-  padding: 0.4vmin 0.5vmin;
-}
-
-button:disabled,
-form:invalid button[type="submit"] {
-  cursor: not-allowed;
-  background-color: var(--tan-4);
-}
-
-button[type="submit"] {
-  grid-column: span 2;
-  margin: 1vmin 0 0;
-}

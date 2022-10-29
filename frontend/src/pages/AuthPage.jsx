@@ -5,11 +5,11 @@ import "./../style.css";
 
 function AuthPage({ setUser }) {
   return (
-    <div>
-      {/* <h1>AuthPage</h1> */}
-      <SignUpForm setUser={setUser} />
-      <br />
+    <div className="PageContainer">
+      <br /><br />
+      <a href="/signup" class="button">New User? Create Account</a>
       <LoginForm setUser={setUser} />
+    
     </div>
   );
 }

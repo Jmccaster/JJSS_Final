@@ -24,7 +24,7 @@ function Search({ setSearchProducts }) {
         <Form.Control
           type="search"
           placeholder="Search Products"
-          className="me-2"
+          className="me-2"    
           aria-label="Search"
           value={searchTerm.val}
           onChange={(e) => setSearchTerm({ val: e.target.value })}

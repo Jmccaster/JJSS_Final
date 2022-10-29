@@ -15,6 +15,7 @@ import ProductCarousel from "././Components/ProductCarousel";
 import { Breadcrumb } from "react-bootstrap";
 
 import SearchPage from "./pages/SearchPage";
+import SignupPage from "./pages/SignupPage";
 
 // Create App component.
 function App() {
@@ -50,6 +51,10 @@ function App() {
           <Route
             path="/login"
             element={<AuthPage setUser={setUser} user={user} />}
+          />
+          <Route
+            path="/signup"
+            element={<SignupPage setUser={setUser} user={user} />}
           />
           <Route
             path="/api/products"

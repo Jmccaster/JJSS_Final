@@ -63,13 +63,15 @@ const SignUpForm = ({ setUser }) => {
   return (
     <div>
       <div className="form-container">
-        <h1>Sign-Up</h1>
-        <form
+        
+        <h1>Sign Up</h1>
+        <form className="authForm"
           autoComplete="off"
           onSubmit={(e) => {
             return handleFormSubmission(e);
           }}
         >
+          <div className="inputlabel">
           <label>Name</label>
           <input
             type="text"
@@ -80,6 +82,8 @@ const SignUpForm = ({ setUser }) => {
             value={name}
             required
           />
+          </div >
+          <div className="inputlabel">
           <label>Email</label>
           <input
             type="email"
@@ -90,6 +94,8 @@ const SignUpForm = ({ setUser }) => {
             value={email}
             required
           />
+           </div>
+           <div className="inputlabel">
           <label>Password</label>
           <input
             type="password"
@@ -100,6 +106,8 @@ const SignUpForm = ({ setUser }) => {
             value={password}
             required
           />
+          </div>
+          <div className="inputlabel">
           <label>Confirm</label>
           <input
             type="password"
@@ -110,9 +118,12 @@ const SignUpForm = ({ setUser }) => {
             value={confirm}
             required
           />
+          </div>
+          <div className="loginbutton">
           <button type="submit" disabled={disable}>
             SIGN UP
           </button>
+          </div>
         </form>
       </div>
       <p className="error-message">&nbsp;{error}</p>

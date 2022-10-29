@@ -43,10 +43,10 @@ const LoginForm = ({ setUser }) => {
         className="form-container"
         onSubmit={(e) => {
           return handleFormSubmission(e);
-        }}
-      >
-        <h1>Login</h1>
-        <form autoComplete="off">
+        }}>
+       
+        <form className="authForm" autoComplete="off">
+        <div className="inputlabel">
           <label>Email</label>
           <input
             type="email"
@@ -57,6 +57,8 @@ const LoginForm = ({ setUser }) => {
             }}
             value={email}
           />
+          </div>
+          <div className="inputlabel">
           <label>Password</label>
           <input
             type="password"
@@ -67,7 +69,11 @@ const LoginForm = ({ setUser }) => {
             }}
             value={password}
           />
+         
+          </div>
+          <div className="loginbutton">
           <button type="submit">LOG IN</button>
+          </div>
         </form>
       </div>
       <p className="error-message">&nbsp;{error}</p>
