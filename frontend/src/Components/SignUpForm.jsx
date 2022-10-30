@@ -63,66 +63,66 @@ const SignUpForm = ({ setUser }) => {
   return (
     <div>
       <div className="form-container">
-        
         <h1>Sign Up</h1>
-        <form className="authForm"
+        <form
+          className="authForm"
           autoComplete="off"
           onSubmit={(e) => {
             return handleFormSubmission(e);
           }}
         >
           <div className="inputlabel">
-          <label>Name</label>
-          <input
-            type="text"
-            name="name"
-            onChange={(e) => {
-              return handleNameChange(e);
-            }}
-            value={name}
-            required
-          />
-          </div >
-          <div className="inputlabel">
-          <label>Email</label>
-          <input
-            type="email"
-            name="email"
-            onChange={(e) => {
-              return handleEmailChange(e);
-            }}
-            value={email}
-            required
-          />
-           </div>
-           <div className="inputlabel">
-          <label>Password</label>
-          <input
-            type="password"
-            name="password"
-            onChange={(e) => {
-              return handlePasswordChange(e);
-            }}
-            value={password}
-            required
-          />
+            <label>Name</label>
+            <input
+              type="text"
+              name="name"
+              onChange={(e) => {
+                return handleNameChange(e);
+              }}
+              value={name}
+              required
+            />
           </div>
           <div className="inputlabel">
-          <label>Confirm</label>
-          <input
-            type="password"
-            name="confirm"
-            onChange={(e) => {
-              return handleConfirmChange(e);
-            }}
-            value={confirm}
-            required
-          />
+            <label>Email</label>
+            <input
+              type="email"
+              name="email"
+              onChange={(e) => {
+                return handleEmailChange(e);
+              }}
+              value={email}
+              required
+            />
+          </div>
+          <div className="inputlabel">
+            <label>Password</label>
+            <input
+              type="password"
+              name="password"
+              onChange={(e) => {
+                return handlePasswordChange(e);
+              }}
+              value={password}
+              required
+            />
+          </div>
+          <div className="inputlabel">
+            <label>Confirm</label>
+            <input
+              type="password"
+              name="confirm"
+              onChange={(e) => {
+                return handleConfirmChange(e);
+              }}
+              value={confirm}
+              required
+            />
           </div>
           <div className="loginbutton">
-          <button type="submit" disabled={disable}>
-            SIGN UP
-          </button>
+            <button type="submit" disabled={disable}>
+              SIGN UP
+            </button>
           </div>
         </form>
       </div>

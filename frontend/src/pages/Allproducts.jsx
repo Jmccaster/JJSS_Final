@@ -37,7 +37,7 @@ function Allproducts({ cart, setCart }) {
                   console.log(cart);
                 }}
               >
-                Buy
+                Add to Cart
               </Button>
             </Card.Body>
           </Card>

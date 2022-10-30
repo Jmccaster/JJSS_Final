@@ -43,36 +43,37 @@ const LoginForm = ({ setUser }) => {
         className="form-container"
         onSubmit={(e) => {
           return handleFormSubmission(e);
-        }}>
-       
+        }}
+      >
+        <h1>Log In</h1>
+
         <form className="authForm" autoComplete="off">
-        <div className="inputlabel">
-          <label>Email</label>
-          <input
-            type="email"
-            name="email"
-            required
-            onChange={(e) => {
-              return handleInputChange(e);
-            }}
-            value={email}
-          />
+          <div className="inputlabel">
+            <label>Email</label>
+            <input
+              type="email"
+              name="email"
+              required
+              onChange={(e) => {
+                return handleInputChange(e);
+              }}
+              value={email}
+            />
           </div>
           <div className="inputlabel">
-          <label>Password</label>
-          <input
-            type="password"
-            name="password"
-            required
-            onChange={(e) => {
-              return handleInputChange(e);
-            }}
-            value={password}
-          />
-         
+            <label>Password</label>
+            <input
+              type="password"
+              name="password"
+              required
+              onChange={(e) => {
+                return handleInputChange(e);
+              }}
+              value={password}
+            />
           </div>
           <div className="loginbutton">
-          <button type="submit">LOG IN</button>
+            <button type="submit">LOG IN</button>
           </div>
         </form>
       </div>

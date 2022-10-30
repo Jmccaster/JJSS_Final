@@ -67,3 +67,11 @@ export const getUser = () => {
 
   return token ? JSON.parse(localStorage.getItem("data")) : null;
 };
+
+export const getUserId = () => {
+  const userId = localStorage.getItem("data")
+    ? JSON.parse(localStorage.getItem("data")).currentUser._id
+    : null;
+  console.log(userId);
+  return userId;
+};

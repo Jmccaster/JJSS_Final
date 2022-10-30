@@ -39,7 +39,7 @@ function Detail({ cart, setCart, gender }) {
                   console.log(cart);
                 }}
               >
-                Buy
+                Add to Cart
               </Button>
             </Card.Body>
           </Card>

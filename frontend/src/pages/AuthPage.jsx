@@ -6,10 +6,12 @@ import "./../style.css";
 function AuthPage({ setUser }) {
   return (
     <div className="PageContainer">
-      <br /><br />
-      <a href="/signup" class="button">New User? Create Account</a>
+      <br />
+      <br />
+      <a href="/signup" className="button">
+        New User? Create Account
+      </a>
       <LoginForm setUser={setUser} />
-    
     </div>
   );
 }
