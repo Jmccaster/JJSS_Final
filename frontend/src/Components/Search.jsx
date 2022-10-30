@@ -21,15 +21,18 @@ function Search({ setSearchProducts }) {
   return (
     <>
       <Form className="d-flex" onSubmit={handleFormSubmission}>
+        {/* <div width="2000">dff</div> */}
         <Form.Control
           type="search"
           placeholder="Search Products"
-          className="me-2"    
+          className="me-2 "
+          // style={{ width: "100%" }}
           aria-label="Search"
           value={searchTerm.val}
           onChange={(e) => setSearchTerm({ val: e.target.value })}
         />
-        <Button variant="secondary" type="submit">
+
+        <Button variant="secondary" type="submit" className="w-50">
           Search
         </Button>
       </Form>
