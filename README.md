@@ -5,6 +5,7 @@
 1. Search Bar: able to search shoes name and color
 2. shopping cart page login required
 3. Auth page styling 
+4. home page redirect to /api/products
 
 
 
