@@ -16,3 +16,4 @@ About shopping cart:
 2. shopping cart styling 
 3. add payment section in the shopping cart
 4. Remy's nav bar merge
+5. Presentation 
