@@ -9,7 +9,7 @@ function SignupPage({ setUser }) {
       <br />
       <br />
       <a href="/login" className="button">
-        ALready a User? Login
+        Have an Account? Login
       </a>
       <SignUpForm setUser={setUser} />
     </div>
