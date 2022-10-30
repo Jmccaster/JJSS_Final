@@ -64,7 +64,10 @@ function App() {
             path="/api/products/:gender"
             element={<Detail setCart={setCart} cart={cart} gender={gender} />}
           />
-          <Route path="/cart" element={<CartPage cart={cart} />} />
+          <Route
+            path="/cart"
+            element={<CartPage cart={cart} setCart={setCart} />}
+          />
           {/* search page route */}
           <Route
             path="/api/products/search/:searchTerm"

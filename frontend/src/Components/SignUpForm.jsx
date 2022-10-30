@@ -52,7 +52,7 @@ const SignUpForm = ({ setUser }) => {
       const user = await signUp(formData);
 
       // Log the data to the console
-      console.log(user);
+      console.log(user.data);
       setUser(user.data);
       navigate("/api/products");
     } catch (error) {

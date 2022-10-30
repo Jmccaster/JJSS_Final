@@ -30,6 +30,7 @@ const LoginForm = ({ setUser }) => {
       const user = await login({ email, password });
 
       // Add the user to state
+      console.log(user.data);
       setUser(user.data);
       navigate("/api/products");
     } catch (error) {
