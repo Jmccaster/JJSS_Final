@@ -5,8 +5,9 @@ import { getUserId } from "../utilities/users-service";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import GooglePayButton from "@google-pay/button-react";
+import "./../style.css";
 
-function CartPage({ cart }) {
+function CartPage({ cart, setCart }) {
   //google pay
   const paymentRequest = {
     apiVersion: 2,
@@ -43,6 +44,19 @@ function CartPage({ cart }) {
   function handleLoadPaymentData(paymentData) {
     console.log("load payment data", paymentData);
   }
+  const handleRemove = (element) => {
+    const arr = cart.filter((item) => item.name !== element.name);
+    setCart(arr);
+  };
+
+  // const handleChange = (element, d) => {
+  //   const ind = cart.indexOf(element);
+  //   const arr = cart;
+  //   arr[ind].amount += d;
+
+  //   if (arr[ind].amount === 0) arr[ind].amount = 1;
+  //   setCart([...arr]);
+  // };
 
   // google pay end
   const navigate = useNavigate();
@@ -51,33 +65,22 @@ function CartPage({ cart }) {
     ? cart.map((element) => {
         return (
           <>
-            <div>
-              <div>{element.name}</div>
+            <div  className="cartcomponents">
+            {/* <button className="cartbutton" onClick={() => handleChange(element, -1)}>-</button> */}
+              <div className="cartnamedisplay">{element.name}</div>
               <div>{element.color}</div>
               <div>${element.price}</div>
+              {/* <button className="cartbutton" onClick={() => handleChange(element, 1)}>+</button> */}
+               <button className="cartbutton" onClick={() => handleRemove(element)}>Remove</button>
               {/* <a style={}>Delete</a> */}
 
               <br />
             </div>
+            <br />
           </>
         );
       })
     : [];
-
-  // remove btn function
-  // const handleRemove = (id) => {
-  //   const arr = cart.filter((item) => item.id !== id);
-  //   setCart(arr);
-  //   handlePrice();
-  // };
-
-  // const handleChange = (item, d) => {
-  //   const ind = cart.indexOf(item);
-  //   const arr = cart;
-  //   arr[ind].amount += d;
-  //   if (arr[ind].amount === 0) arr[ind].amount = 1;
-  //   setCart([...arr]);
-  // };
 
   useEffect(() => {
     if (!id) {
@@ -85,20 +88,25 @@ function CartPage({ cart }) {
     }
   }, [id]);
 
+
+
   return (
     <>
       <br />
       <br />
-      <h1> Shopping Cart</h1>
-
+      <h4> </h4>
+      <br />
+      <div>
       <div>{productList}</div>
+      </div>
       <h2>
         Total Price: $
         {cart.reduce((total, element) => total + parseInt(element.price), 0)}
       </h2>
-      <button type="submit" className="buybtn">
-        Check Out
-      </button>
+      <br /> <br/>
+      <a href="/payments" className="button">
+       Proceed to Check Out</a>
+      
       <br />
       <br />
       <h5> Payment Method</h5>
@@ -109,7 +117,7 @@ function CartPage({ cart }) {
           onLoadPaymentData={handleLoadPaymentData}
         />
       </div>
-
+  
       <br />
     </>
   );
