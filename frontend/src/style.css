@@ -171,3 +171,23 @@ label {
   align-items: center;
 }
 
+.cartcomponents{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-left: 10%;
+  padding-right: 10%;
+
+ 
+}
+
+
+.cartbutton{
+  width: 10%;
+  height: 50px;
+  align-items: center;
+}
+
+.cartnamedisplay{
+  width: 40%;
+}

@@ -16,6 +16,7 @@ import { Breadcrumb } from "react-bootstrap";
 
 import SearchPage from "./pages/SearchPage";
 import SignupPage from "./pages/SignupPage";
+import PaymentForm from "./pages/PaymentForm";
 
 // Create App component.
 function App() {
@@ -78,6 +79,10 @@ function App() {
                 searchTerm={searchProducts}
               />
             }
+          />
+          <Route
+            path="/payments"
+            element={<PaymentForm cart={cart} setCart={setCart} />}
           />
         </Routes>
         <Footer />
