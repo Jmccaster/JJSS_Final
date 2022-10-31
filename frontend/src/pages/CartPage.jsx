@@ -65,13 +65,18 @@ function CartPage({ cart, setCart }) {
     ? cart.map((element) => {
         return (
           <>
-            <div  className="cartcomponents">
-            {/* <button className="cartbutton" onClick={() => handleChange(element, -1)}>-</button> */}
+            <div className="cartcomponents">
+              {/* <button className="cartbutton" onClick={() => handleChange(element, -1)}>-</button> */}
               <div className="cartnamedisplay">{element.name}</div>
               <div>{element.color}</div>
               <div>${element.price}</div>
               {/* <button className="cartbutton" onClick={() => handleChange(element, 1)}>+</button> */}
-               <button className="cartbutton" onClick={() => handleRemove(element)}>Remove</button>
+              <button
+                className="cartbutton"
+                onClick={() => handleRemove(element)}
+              >
+                Remove
+              </button>
               {/* <a style={}>Delete</a> */}
 
               <br />
@@ -88,39 +93,61 @@ function CartPage({ cart, setCart }) {
     }
   }, [id]);
 
+  const load = () => {
+    return (
+      <>
+        <br />
+        <br />
+        <h4> </h4>
+        <br />
+        <div>
+          <div>{productList}</div>
+        </div>
+        <h2>
+          Total Price: $
+          {cart.reduce((total, element) => total + parseInt(element.price), 0)}
+        </h2>
+        <br /> <br />
+        <a href="/payments" className="button">
+          Proceed to Check Out
+        </a>
+        <br />
+        <br />
+        <h5> Payment Method</h5>
+        <div className="buttons">
+          <GooglePayButton
+            buttonType="short"
+            paymentRequest={paymentRequest}
+            onLoadPaymentData={handleLoadPaymentData}
+          />
+        </div>
+        <br />
+      </>
+    );
+  };
+  const loading = () => {
+    return (
+      <>
+        <br />
+        <br />
+        <h4> </h4>
+        <br />
+        <div>
+          <div>{productList}</div>
+        </div>
+        <h2>Cart is empty</h2>
+        <br /> <br />
+        <a href="/" className="button">
+          Continue Shopping
+        </a>
+        <br />
+        <br />
+        <br />
+      </>
+    );
+  };
 
-
-  return (
-    <>
-      <br />
-      <br />
-      <h4> </h4>
-      <br />
-      <div>
-      <div>{productList}</div>
-      </div>
-      <h2>
-        Total Price: $
-        {cart.reduce((total, element) => total + parseInt(element.price), 0)}
-      </h2>
-      <br /> <br/>
-      <a href="/payments" className="button">
-       Proceed to Check Out</a>
-      
-      <br />
-      <br />
-      <h5> Payment Method</h5>
-      <div className="buttons">
-        <GooglePayButton
-          buttonType="short"
-          paymentRequest={paymentRequest}
-          onLoadPaymentData={handleLoadPaymentData}
-        />
-      </div>
-  
-      <br />
-    </>
-  );
+  return cart.length > 0 ? load() : loading();
 }
 
 export default CartPage;
