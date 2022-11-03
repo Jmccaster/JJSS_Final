@@ -4,42 +4,42 @@ import { Card, Container } from "react-bootstrap";
 import { getUserId } from "../utilities/users-service";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import GooglePayButton from "@google-pay/button-react";
+// import GooglePayButton from "@google-pay/button-react";
 import "./../style.css";
 
 function CartPage({ cart, setCart }) {
   //google pay
-  const paymentRequest = {
-    apiVersion: 2,
-    apiVersionMinor: 0,
-    allowedPaymentMethods: [
-      {
-        type: "CARD",
-        parameters: {
-          allowedAuthMethods: ["PAN_ONLY", "CRYPTOGRAM_3DS"],
-          allowedCardNetworks: ["MASTERCARD", "VISA"],
-        },
-        tokenizationSpecification: {
-          type: "PAYMENT_GATEWAY",
-          parameters: {
-            gateway: "example",
-            gatewayMerchantId: "exampleGatewayMerchantId",
-          },
-        },
-      },
-    ],
-    merchantInfo: {
-      merchantId: "12345678901234567890",
-      merchantName: "Demo Merchant",
-    },
-    transactionInfo: {
-      totalPriceStatus: "FINAL",
-      totalPriceLabel: "Total",
-      totalPrice: "100.00",
-      currencyCode: "USD",
-      countryCode: "US",
-    },
-  };
+  // const paymentRequest = {
+  //   apiVersion: 2,
+  //   apiVersionMinor: 0,
+  //   allowedPaymentMethods: [
+  //     {
+  //       type: "CARD",
+  //       parameters: {
+  //         allowedAuthMethods: ["PAN_ONLY", "CRYPTOGRAM_3DS"],
+  //         allowedCardNetworks: ["MASTERCARD", "VISA"],
+  //       },
+  //       tokenizationSpecification: {
+  //         type: "PAYMENT_GATEWAY",
+  //         parameters: {
+  //           gateway: "example",
+  //           gatewayMerchantId: "exampleGatewayMerchantId",
+  //         },
+  //       },
+  //     },
+  //   ],
+  //   merchantInfo: {
+  //     merchantId: "12345678901234567890",
+  //     merchantName: "Demo Merchant",
+  //   },
+  //   transactionInfo: {
+  //     totalPriceStatus: "FINAL",
+  //     totalPriceLabel: "Total",
+  //     totalPrice: "100.00",
+  //     currencyCode: "USD",
+  //     countryCode: "US",
+  //   },
+  // };
 
   function handleLoadPaymentData(paymentData) {
     console.log("load payment data", paymentData);
@@ -114,13 +114,13 @@ function CartPage({ cart, setCart }) {
         <br />
         <br />
         <h5> Payment Method</h5>
-        <div className="buttons">
+        {/* <div className="buttons">
           <GooglePayButton
             buttonType="short"
             paymentRequest={paymentRequest}
             onLoadPaymentData={handleLoadPaymentData}
           />
-        </div>
+        </div> */}
         <br />
       </>
     );
